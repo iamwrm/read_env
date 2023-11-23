@@ -15,6 +15,5 @@ check the example in [test/test.sh](test/test.sh)
 ```bash
 READ_ENV_URL=https://raw.githubusercontent.com/iamwrm/read_env/main/read_env.sh
 # run read_env.sh without saving it
-OPENSSL_ENC_KEY=$(bash <(curl -s $READ_ENV_URL) \
-    .env OPENSSL_ENC_KEY)
+OPENSSL_ENC_KEY=$(bash <(curl -s $READ_ENV_URL) .env OPENSSL_ENC_KEY)
 ```
