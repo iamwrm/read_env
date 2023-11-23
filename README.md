@@ -17,3 +17,10 @@ READ_ENV_URL=https://raw.githubusercontent.com/iamwrm/read_env/main/read_env.sh
 # run read_env.sh without saving it
 OPENSSL_ENC_KEY=$(bash <(curl -s $READ_ENV_URL) .env OPENSSL_ENC_KEY)
 ```
+
+
+Alternatively, you can use 
+
+```bash
+export $(cat .env | grep OPENSSL_ENC_KEY)
+```
