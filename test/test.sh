@@ -5,13 +5,23 @@ set -ueox pipefail
 
 echo "We create a .env file with DB_URL"
 cat << EOF > .env
-DB_URL=postgres://user:pass@localhost:5432/db
+DB_URL=postgres://user:pass@localhost:5432/db1
 EOF
 
 
 echo "We read DB_URL from .env file"
 export DB_URL=$(bash read_env.sh .env DB_URL)
 echo "We read DB_URL from .env file is: $DB_URL"
+
+echo "We create a .env file with DB_URL"
+cat << EOF > .env
+DB_URL=postgres://user:pass@localhost:5432/db2
+EOF
+
+echo "We read DB_URL from .env file again"
+export $(cat .env | grep OPENSSL_ENC_KEY)
+echo "We read DB_URL from .env file is: $DB_URL"
+
 
 
 echo "Now we try to read DB_URL1 from .env file, which does not exist"
