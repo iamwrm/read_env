@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ueox pipefail
+set -ueo pipefail
 
 
 echo "We create a .env file with DB_URL"
